@@ -186,7 +186,7 @@ See the documentation for Spreadsheet::ParseExcel.
 
 =head1 DESCRIPTION
 
-This module is used in conjunction with Spreadsheet::ParseExcel. See the documentation for Spreadsheet::ParseExcel.
+This module is used in conjunction with Spreadsheet::ParseExcel. See the documentation for L<Spreadsheet::ParseExcel>.
 
 =head1 AUTHOR
 
