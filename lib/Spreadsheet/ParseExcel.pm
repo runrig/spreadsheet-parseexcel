@@ -3172,7 +3172,7 @@ Returns the style of an underlined font where the value has the following meanin
 
 Returns the color index for the font. The mapping to an RGB color is defined by each workbook.
 
-The index can be converted to a RGB string using the C<$workbook->ColorIdxToRGB()> Parser method.
+The index can be converted to a RGB string using the C<< $workbook->color_idx_to_rgb() >> method.
 
 (Older versions of C<Spreadsheet::ParseExcel> provided the C<ColorIdxToRGB> class method, which is deprecated.)
 
