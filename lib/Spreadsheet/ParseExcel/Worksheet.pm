@@ -549,38 +549,39 @@ sub is_print_comments {
     return $self->{Notes};
 }
 
-=head2 get_tab_color()
-
-Return color index of tab, or undef if not set.
-
-=cut
-
+###############################################################################
+#
+# get_tab_color()
+#
+# Return color index of tab, or undef if not set.
+#
 sub get_tab_color {
     my $worksheet = shift;
 
     return $worksheet->{TabColor};
 }
 
-=head2 is_sheet_hidden()
-
-Return true if sheet is hidden
-
-=cut
-
+###############################################################################
+#
+# is_sheet_hidden()
+#
+# Return true if sheet is hidden
+#
+#
 sub is_sheet_hidden {
     my $worksheet = shift;
 
     return $worksheet->{SheetHidden};
 }
 
-=head2 is_row_hidden($row)
-
-In scalar context, return true if $row is hidden
-In array context, return an array whose elements are true
-if the corresponding row is hidden.
-
-=cut
-
+###############################################################################
+#
+# is_row_hidden($row)
+#
+# In scalar context, return true if $row is hidden
+# In array context, return an array whose elements are true
+# if the corresponding row is hidden.
+#
 sub is_row_hidden {
     my $worksheet = shift;
 
@@ -595,14 +596,14 @@ sub is_row_hidden {
     return $worksheet->{RowHidden}[$row];
 }
 
-=head2 is_col_hidden($col)
-
-In scalar context, return true if $col is hidden
-In array context, return an array whose elements are true
-if the corresponding column is hidden.
-
-=cut
-
+###############################################################################
+#
+# is_col_hidden($col)
+#
+# In scalar context, return true if $col is hidden
+# In array context, return an array whose elements are true
+# if the corresponding column is hidden.
+#
 sub is_col_hidden {
     my $worksheet = shift;
 
@@ -683,7 +684,10 @@ The C<Spreadsheet::ParseExcel::Worksheet> class encapsulates the properties of a
     $worksheet->is_print_black_and_white()
     $worksheet->is_print_draft()
     $worksheet->is_print_comments()
-
+    $worksheet->get_tab_color()
+    $worksheet->is_sheet_hidden()
+    $worksheet->is_row_hidden()
+    $worksheet->is_col_hidden()
 
 =head2 get_cell($row, $col)
 
@@ -1009,6 +1013,34 @@ The C<is_print_comments()> method returns true if the worksheet print "comments"
     my $is_print_comments = $worksheet->is_print_comments();
 
 Returns 0 if the property isn't set.
+
+
+=head2 get_tab_color()
+
+Return color index of tab, or undef if not set.
+
+    my $tab_color = $worksheet->get_tab_color();
+
+
+=head2 is_sheet_hidden()
+
+Return true if sheet is hidden
+
+    my $is_sheet_hidden = $worksheet->is_sheet_hidden()
+
+
+=head2 is_row_hidden($row)
+
+In scalar context, return true if C<$row> is hidden
+In array context, return an array whose elements are true
+if the corresponding row is hidden.
+
+
+=head2 is_col_hidden($col)
+
+In scalar context, return true if C<$col> is hidden
+In array context, return an array whose elements are true
+if the corresponding column is hidden.
 
 
 =head1 AUTHOR

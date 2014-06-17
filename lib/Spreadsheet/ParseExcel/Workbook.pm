@@ -151,13 +151,14 @@ sub ParseAbort {
     $self->{_ParseAbort} = $val;
 }
 
-=head2 get_active_sheet()
-
-Return the number of the active (open) worksheet (at the time the workbook
-was saved.  May return undef.
-
-=cut
-
+###############################################################################
+#
+# get_active_sheet()
+#
+# Return the number of the active (open) worksheet (at the time the workbook
+# was saved).  May return undef.
+#
+#
 sub get_active_sheet {
     my $workbook = shift;
 
@@ -294,6 +295,14 @@ The C<using_1904_date()> method returns true if the Excel file is using the 1904
  The Windows version of Excel generally uses the 1900 epoch while the Mac version of Excel generally uses the 1904 epoch.
 
 Returns 0 if the 1900 epoch is in use.
+
+
+=head2 get_active_sheet()
+
+Return the number of the active (open) worksheet (at the time the workbook
+was saved).  May return C<undef>.
+
+=cut
 
 
 =head1 AUTHOR
