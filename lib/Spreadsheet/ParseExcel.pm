@@ -3105,6 +3105,9 @@ Returns an array ref of fill pattern and color indexes as follows:
 
     [ $pattern, $front_color, $back_color ]
 
+Fun Excel quirk: if only a background color is set, then the pattern
+is set to solid, and the front and back colors are swapped.
+
 =head2 $format->{Lock}
 
 Returns true if the cell is locked.
