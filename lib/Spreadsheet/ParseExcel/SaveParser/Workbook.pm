@@ -138,6 +138,7 @@ sub SaveAs {
     for ( my $iSheet = 0 ; $iSheet < $oBook->{SheetCount} ; $iSheet++ ) {
         my $oWkS = $oBook->{Worksheet}[$iSheet];
         my $oWrS = $oWrEx->addworksheet( $oWkS->{Name} );
+        $oWrS->keep_leading_zeros();
 
         #Landscape
         if ( !$oWkS->{Landscape} ) {    # Landscape (0:Horizontal, 1:Vertical)
