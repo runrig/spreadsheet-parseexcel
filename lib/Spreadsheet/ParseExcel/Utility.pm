@@ -1218,14 +1218,14 @@ sub ExcelLocaltime {
 sub col2int {
     my $result = 0;
     my $str    = shift;
-    my $incr   = 0;
+    my $incr   = 1;
 
     for ( my $i = length($str) ; $i > 0 ; $i-- ) {
         my $char = substr( $str, $i - 1 );
         my $curr += ord( lc($char) ) - ord('a') + 1;
-        $curr *= $incr if ($incr);
+        $curr *= $incr;
         $result += $curr;
-        $incr   += 26;
+        $incr   *= 26;
     }
 
     # this is one out as we range 0..x-1 not 1..x
