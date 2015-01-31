@@ -139,6 +139,9 @@ sub SaveAs {
         my $oWkS = $oBook->{Worksheet}[$iSheet];
         my $oWrS = $oWrEx->addworksheet( $oWkS->{Name} );
 
+        # set add_write_handler to write "0123" and "0E123" etc as strings
+        $oWrS->add_write_handler(qr/^(0[^.]\d*)?(\.\d*)?([\d.]*?[Ee](\d+)?)?$/, \&write_as_string_handler);
+
         #Landscape
         if ( !$oWkS->{Landscape} ) {    # Landscape (0:Horizontal, 1:Vertical)
             $oWrS->set_landscape();
@@ -304,6 +307,12 @@ sub SaveAs {
         }
     }
     return $oWrEx;
+
+    # this function is used by add_write_handler above
+    sub write_as_string_handler {
+        my $worksheet = shift;
+        return $worksheet->write_string(@_);
+    }
 }
 
 #------------------------------------------------------------------------------
