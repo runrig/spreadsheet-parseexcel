@@ -21,6 +21,11 @@ my %resources = (
     MailingList => 'http://groups.google.com/group/spreadsheet-parseexcel',
 );
 
+my %testdeps = qw(
+	Perl::MinimumVersion 1.20
+	Test::MinimumVersion 0.008
+);
+
 my %params = (
     'AUTHOR'        => 'Douglas Wilson (dougw@cpan.org)',
     'NAME'          => 'Spreadsheet::ParseExcel',
@@ -31,6 +36,7 @@ my %params = (
     'INSTALLDIRS'   => 'site',
     'PL_FILES'      => {},
     'PREREQ_PM'     => \%deps,
+     TEST_REQUIRES  => \%testdeps
     'NEEDS_LINKING' => 0,
     'test'          => { TESTS => 't/*.t' }
 );
