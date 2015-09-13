@@ -2984,7 +2984,7 @@ The C<unformatted()> method returns the unformatted value of the cell.
 
     my $unformatted = $cell->unformatted();
 
-Returns the cell value without a numeric format. See the C<value()> method above.
+Returns the cell value without a numeric format. See the C<value()> method above. Do not use this method if you are trying to read encoded text.
 
 =head2 Other Cell Methods
 
