@@ -69,7 +69,7 @@ my %hFmtDefault = (
 sub new {
     my ( $sPkg, %hKey ) = @_;
     my $oThis = {};
-    bless $oThis;
+    bless $oThis, $sPkg;
     return $oThis;
 }
 
