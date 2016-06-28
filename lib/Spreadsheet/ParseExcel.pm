@@ -2752,7 +2752,7 @@ Spreadsheet::ParseExcel - Read information from an Excel file.
 
 The Spreadsheet::ParseExcel module can be used to read information from Excel 95-2003 binary files.
 
-The module cannot read files in the Excel 2007 Open XML XLSX format. See the L<Spreadsheet::XLSX> module instead.
+The module cannot read files in the Excel 2007 Open XML XLSX format. See the L<Spreadsheet::ParseXLSX> module instead.
 
 =head1 Parser
 
@@ -3445,7 +3445,7 @@ L<http://rt.cpan.org/Public/Dist/Display.html?Name=Spreadsheet-ParseExcel>
 
 =item * XLSperl by Jon Allen L<http://search.cpan.org/~jonallen/XLSperl/bin/XLSperl>. This application allows you to use Perl "one-liners" with Microsoft Excel files.
 
-=item * Spreadsheet::XLSX L<http://search.cpan.org/~dmow/Spreadsheet-XLSX/lib/Spreadsheet/XLSX.pm> by Dmitry Ovsyanko. A module with a similar interface to Spreadsheet::ParseExcel for parsing Excel 2007 XLSX OpenXML files.
+=item * Spreadsheet::ParseXLSX L<https://metacpan.org/pod/Spreadsheet::ParseXLSX> by Jesse Luehrs. A module adaptor for Spreadsheet::ParseExcel that reads XLSX files.
 
 =item * Spreadsheet::Read L<http://search.cpan.org/~hmbrand/Spreadsheet-Read/Read.pm> by H.Merijn Brand. A single interface for reading several different spreadsheet formats.
 
