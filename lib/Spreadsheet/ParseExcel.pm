@@ -2544,7 +2544,19 @@ sub _subStrWk {
     # Extract out any full strings from the current buffer leaving behind a
     # partial string that is continued into the next block, or an empty
     # buffer is no string is continued.
-    while ( length $self->{_buffer} >= 4 ) {
+    #
+    # Why here buffer length is compared against 3 not 4 is because some xls
+    # writers are possible to generate a 3-byte "0x00 0x00 0x00" as a string
+    # record. We understand this seems somewhat non-standard as MS Excel
+    # won't generate that, on the other hand, the xls structure specification
+    # does not really to forbid it. Actually the _convBIFF8String() function
+    # in this file is fine to process such 3-byte zeros. However, we saw
+    # xls files with this 3-byte "0x00 0x00 0x00" right before a CONTINUE
+    # record, and in this case if we compare buffer length against 4 the
+    # Spreadsheet::ParseExcel logic would run into wrong state and lose the
+    # CONTINUE record and cause texts missing from some cells. MS Excel and
+    # Python's xlrd are forgivable and they don't lose the CONTINUE record.
+    while ( length $self->{_buffer} >= 3 ) {
         my ( $str_info, $length, $str_position, $str_length ) =
           _convBIFF8String( $self, $self->{_buffer}, 1 );
 
